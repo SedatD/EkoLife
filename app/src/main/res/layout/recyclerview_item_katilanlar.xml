@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relativeLayout_recyclerView_katilanlar_genel"
+    android:layout_width="match_parent"
+    android:layout_height="185dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+
+    <ImageView
+        android:id="@+id/imageView_katilanlar_foto"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/kafa" />
+
+    <TextView
+        android:id="@+id/textView_katilanlar_departman"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView_katilanlar_foto"
+        android:layout_centerHorizontal="true"
+        android:text="Boyner" />
+
+    <TextView
+        android:id="@+id/textView_katilanlar_isim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView_katilanlar_departman"
+        android:layout_alignStart="@+id/textView_katilanlar_departman"
+        android:layout_below="@+id/textView_katilanlar_departman"
+        android:layout_marginTop="10dp"
+        android:text="küsürat KÜSÜRATOĞLU"
+        android:textColor="@color/colorMainPurple"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView_katilanlar_mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView_katilanlar_isim"
+        android:layout_alignStart="@+id/textView_katilanlar_isim"
+        android:layout_below="@+id/textView_katilanlar_isim"
+        android:layout_marginTop="10dp"
+        android:text="kusurat@ekoccs.com" />
+
+    <Button
+        android:id="@+id/button_katilanlar_tebrik"
+        android:layout_width="125dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/textView_katilanlar_mail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/mybutton"
+        android:text="tebrik et"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/textYourself"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_katilanlar_mail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:visibility="gone" />
+
+</RelativeLayout>

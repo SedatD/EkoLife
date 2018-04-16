@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/moodbackground"
+    tools:context="agency.vavien.ekolife.MoodActivity">
+
+    <TextView
+        android:id="@+id/textView_etkinlik_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="Merhaba"
+        android:textColor="@android:color/white"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView_etkinlik_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_etkinlik_title"
+        android:layout_centerHorizontal="true"
+        android:text="Bugün Nasılsın?"
+        android:textColor="@android:color/white"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <ImageButton
+        android:id="@+id/imageButton_neseli"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView_etkinlik_text"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/neseli" />
+
+    <TextView
+        android:id="@+id/textView_neseli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/imageButton_neseli"
+        android:layout_alignLeft="@+id/imageButton_neseli"
+        android:layout_alignRight="@+id/imageButton_neseli"
+        android:layout_alignStart="@+id/imageButton_neseli"
+        android:layout_below="@+id/imageButton_neseli"
+        android:layout_marginTop="5dp"
+        android:text="neşeliyim ah pek şenim"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background" />
+
+    <ImageButton
+        android:id="@+id/imageButton_uyku"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView_etkinlik_text"
+        android:layout_marginRight="55dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/uyku" />
+
+    <TextView
+        android:id="@+id/textView_uyku"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/imageButton_uyku"
+        android:layout_alignLeft="@+id/imageButton_uyku"
+        android:layout_alignRight="@+id/imageButton_uyku"
+        android:layout_alignStart="@+id/imageButton_uyku"
+        android:layout_below="@+id/imageButton_uyku"
+        android:layout_marginTop="5dp"
+        android:text="aneee 5dk daha"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background" />
+
+    <ImageButton
+        android:id="@+id/imageButton_kizgin"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignLeft="@+id/imageButton_neseli"
+        android:layout_alignStart="@+id/imageButton_neseli"
+        android:layout_below="@+id/imageButton_neseli"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/kizgin" />
+
+    <TextView
+        android:id="@+id/textView_kizgin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/imageButton_kizgin"
+        android:layout_alignLeft="@+id/imageButton_kizgin"
+        android:layout_alignRight="@+id/imageButton_kizgin"
+        android:layout_alignStart="@+id/imageButton_kizgin"
+        android:layout_below="@+id/imageButton_kizgin"
+        android:layout_marginTop="5dp"
+        android:text="mazeretim var asabiyim ben"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background" />
+
+    <ImageButton
+        android:id="@+id/imageButton_oynatmaya"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignEnd="@+id/imageButton_uyku"
+        android:layout_alignRight="@+id/imageButton_uyku"
+        android:layout_below="@+id/imageButton_uyku"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/oynatmaya" />
+
+    <TextView
+        android:id="@+id/textView_oynatmaya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/imageButton_oynatmaya"
+        android:layout_alignLeft="@+id/imageButton_oynatmaya"
+        android:layout_alignRight="@+id/imageButton_oynatmaya"
+        android:layout_alignStart="@+id/imageButton_oynatmaya"
+        android:layout_below="@+id/imageButton_oynatmaya"
+        android:layout_marginTop="5dp"
+        android:text="oynatmaya az kaldı"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background" />
+
+    <ImageButton
+        android:id="@+id/imageButton_hayatzor"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignLeft="@+id/imageButton_kizgin"
+        android:layout_alignStart="@+id/imageButton_kizgin"
+        android:layout_below="@+id/imageButton_kizgin"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/hayatzor" />
+
+    <TextView
+        android:id="@+id/textView_hayatzor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/imageButton_hayatzor"
+        android:layout_alignLeft="@+id/imageButton_hayatzor"
+        android:layout_alignRight="@+id/imageButton_hayatzor"
+        android:layout_alignStart="@+id/imageButton_hayatzor"
+        android:layout_below="@+id/imageButton_hayatzor"
+        android:layout_marginTop="5dp"
+        android:text="hayat zor acımasız ve karanlık"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background" />
+
+    <ImageButton
+        android:id="@+id/imageButton_gevsek"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignEnd="@+id/imageButton_oynatmaya"
+        android:layout_alignRight="@+id/imageButton_oynatmaya"
+        android:layout_below="@+id/imageButton_oynatmaya"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/gevsek" />
+
+    <TextView
+        android:id="@+id/textView_gevsek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/imageButton_gevsek"
+        android:layout_alignLeft="@+id/imageButton_gevsek"
+        android:layout_alignRight="@+id/imageButton_gevsek"
+        android:layout_alignStart="@+id/imageButton_gevsek"
+        android:layout_below="@+id/imageButton_gevsek"
+        android:layout_marginTop="5dp"
+        android:text="gevşedi gönlümün yayları"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background" />
+
+    <TextView
+        android:id="@+id/textView_neden_soruyoruz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:clickable="true"
+        android:text="Neden Soruyoruz?"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

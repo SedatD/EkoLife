@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        app:srcCompat="@drawable/logo" />
+
+    <EditText
+        android:id="@+id/editText_login_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="Kullanıcı Adı"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColorLink="@color/colorMainPurple" />
+
+    <EditText
+        android:id="@+id/editText_login_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText_login_name"
+        android:layout_alignStart="@+id/editText_login_name"
+        android:layout_below="@+id/editText_login_name"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="Şifre"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:textColorLink="@color/colorMainPurple" />
+
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editText_login_password"
+        android:layout_alignLeft="@+id/editText_login_password"
+        android:layout_alignRight="@+id/editText_login_password"
+        android:layout_alignStart="@+id/editText_login_password"
+        android:layout_below="@+id/editText_login_password"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/mybutton"
+        android:text="giriş yap"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/textView_login_sifremi_unuttum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:clickable="true"
+        android:text="@string/sifremi_unuttum"
+        android:textColor="@color/colorMainPurple" />
+</RelativeLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relativeLayout_haberler"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:layout_weight="1"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imageView_haberler_photo"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="15dp" />
+
+    <TextView
+        android:id="@+id/textView_haberler_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView_haberler_date"
+        android:layout_toEndOf="@+id/imageView_haberler_photo"
+        android:layout_toRightOf="@+id/imageView_haberler_photo"
+        android:paddingLeft="15dp"
+        android:text="Haber"
+        android:textColor="@color/colorMainPurple"
+        android:textSize="21sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/tarih" />
+
+    <TextView
+        android:id="@+id/textView_haberler_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView6"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/imageView6"
+        android:layout_toStartOf="@+id/imageView6"
+        android:gravity="center"
+        android:text="30.08.2016"
+        android:textAlignment="center" />
+
+</RelativeLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/oneribackground"
+    tools:context="tech.bonbon.ekocenter.OneriActivity">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText_oneri_title"
+        android:layout_alignLeft="@+id/editText_oneri_title"
+        android:layout_alignStart="@+id/editText_oneri_title"
+        android:layout_marginBottom="2dp"
+        android:text="Konu Başlığı :"
+        android:textColor="@android:color/white" />
+
+    <EditText
+        android:id="@+id/editText_oneri_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@android:color/background_light"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <ImageButton
+        android:id="@+id/imageButton_oneri_foto"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/editText_oneri_title"
+        android:layout_alignEnd="@+id/editText_oneri_title"
+        android:layout_alignRight="@+id/editText_oneri_title"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/foto" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText_oneri_content"
+        android:layout_alignStart="@+id/editText_oneri_content"
+        android:layout_below="@+id/editText_oneri_title"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="21dp"
+        android:text="Bence Olsa Güzel Olur :"
+        android:textColor="@android:color/white" />
+
+    <EditText
+        android:id="@+id/editText_oneri_content"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_alignEnd="@+id/editText_oneri_title"
+        android:layout_alignLeft="@+id/editText_oneri_title"
+        android:layout_alignRight="@+id/editText_oneri_title"
+        android:layout_alignStart="@+id/editText_oneri_title"
+        android:layout_below="@+id/editText_oneri_title"
+        android:layout_marginTop="40dp"
+        android:background="@android:color/background_light"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:id="@+id/button_oneri_gonder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editText_oneri_content"
+        android:layout_alignRight="@+id/editText_oneri_content"
+        android:layout_below="@+id/editText_oneri_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/mybutton"
+        android:text="gönder"
+        android:textColor="@android:color/white" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="125dp"
+        android:layout_alignLeft="@+id/editText_oneri_content"
+        android:layout_alignStart="@+id/editText_oneri_content"
+        android:layout_alignTop="@+id/button_oneri_gonder" />
+
+</RelativeLayout>

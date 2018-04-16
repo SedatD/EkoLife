@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorMainPurple">#6105ea</color>
+    <color name="colorEtkinlikler">#6347dd</color>
+    <color name="colorHaberler">#529cf3</color>
+    <color name="colorYemek">#4aceb1</color>
+    <color name="colorServis">#3d3fcf</color>
+    <color name="colorProfilResimButon">#d7d7d7</color>
+    <color name="tab_back_selected">#6105ea</color>
+    <color name="tab_back_notSelected">#EFEFEF</color>
+    <color name="contact_name">#333333</color>
+    <color name="contact_number">#8c8c8c</color>
+
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="haberGrisi">#EFEFEF</color>
+    <color name="colorExpChild">#e2f0ec</color>
+</resources>

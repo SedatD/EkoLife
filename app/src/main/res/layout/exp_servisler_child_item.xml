@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorExpChild"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/textView_StServis"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:focusableInTouchMode="false"
+        android:gravity="center_vertical"
+        android:text="Medium Text"
+        android:textSize="19sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView_StGuzergahLink"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView_StServis"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:text="Üsküdar - Zeynep Kamil - Altunizade - Firma" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView_StGuzergahLink"
+        app:srcCompat="@drawable/kisi" />
+
+    <TextView
+        android:id="@+id/textView_StSurucuAdi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView9"
+        android:layout_below="@+id/textView_StGuzergahLink"
+        android:layout_toEndOf="@+id/imageView9"
+        android:layout_toRightOf="@+id/imageView9"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="Cengiz KARAKAYA" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageView9"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@drawable/tel" />
+
+    <TextView
+        android:id="@+id/textView_StSurucuGSM"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView10"
+        android:layout_below="@+id/textView_StSurucuAdi"
+        android:layout_toEndOf="@+id/imageView10"
+        android:layout_toRightOf="@+id/imageView10"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="0 555 123 11 22" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageView10"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@drawable/kisi" />
+
+    <TextView
+        android:id="@+id/textView_StServisPlaka"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView11"
+        android:layout_below="@+id/textView_StSurucuGSM"
+        android:layout_toEndOf="@+id/imageView11"
+        android:layout_toRightOf="@+id/imageView11"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="34 AAA 34" />
+
+</RelativeLayout>
