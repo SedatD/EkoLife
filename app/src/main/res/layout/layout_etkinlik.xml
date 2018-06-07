@@ -9,4 +9,15 @@
         android:layout_height="match_parent"
         android:scrollbars="vertical" />
 
+    <TextView
+        android:id="@+id/textView_etkinlikler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mevcut bir etkinlik yok"
+        android:layout_marginTop="150dp"
+        android:visibility="gone"
+        android:textColor="@color/colorMainPurple"
+        android:textAlignment="center"
+        android:textSize="23sp"/>
+
 </RelativeLayout>

@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -46,6 +47,7 @@ public class EtkinlikFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private TextView textView_etkinlikler;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -57,6 +59,8 @@ public class EtkinlikFragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
         //mAdapter = new EtkinliklerAdapter(getDataSet());
         //mRecyclerView.setAdapter(mAdapter);
+
+        textView_etkinlikler = rootView.findViewById(R.id.textView_etkinlikler);
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
         getRequest(preferences.getString("autoId", null));
@@ -98,11 +102,15 @@ public class EtkinlikFragment extends Fragment {
                                 results.add(obj);
                             }
 
+                            if (jsonArray.length() <1)
+                                textView_etkinlikler.setVisibility(View.VISIBLE);
+
                             mAdapter = new EtkinliklerAdapter(results);
                             mRecyclerView.setAdapter(mAdapter);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
+                            textView_etkinlikler.setVisibility(View.VISIBLE);
                         }
                     }
                 },

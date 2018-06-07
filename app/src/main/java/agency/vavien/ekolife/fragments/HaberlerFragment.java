@@ -122,6 +122,7 @@ public class HaberlerFragment extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.wtf("HaberlerFrag", "Error : " + error);
+                textView_haberler.setVisibility(View.VISIBLE);
             }
         }) {
             @Override
