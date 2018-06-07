@@ -84,7 +84,10 @@ public class FragmentDoganlarThree extends Fragment {
                 String StInstagram = jsonObject1.getString("StInstagram");
                 String StLinkedin = jsonObject1.getString("StLinkedin");
 
-                DoganlarPojo obj = new DoganlarPojo(katilanId,doganlarPhoto, "Nice Yıllara " + doganlarName,Horoscope,StFacebook,StInstagram);
+                String StOneSignalId = jsonObject1.getString("StOneSignalId");
+                int likeAdet = jsonObject1.getInt("InLikeAdet");
+
+                DoganlarPojo obj = new DoganlarPojo(katilanId, doganlarPhoto, "Nice Yıllara " + doganlarName, Horoscope, StFacebook, StInstagram, StOneSignalId, likeAdet);
                 results.add(obj);
             }
         } catch (Exception e) {
@@ -106,7 +109,7 @@ public class FragmentDoganlarThree extends Fragment {
 
     private void getRequest(final String autoId) {
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://ekolife.vodasoft.com.tr/api/General/GetBirthDays?req=3", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://ekolife.ekoccs.com/api/General/GetBirthDays?req=3", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.wtf("HttpClient", "success! response 3: " + response);

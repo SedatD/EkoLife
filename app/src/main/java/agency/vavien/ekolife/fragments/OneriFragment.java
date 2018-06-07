@@ -151,7 +151,7 @@ public class OneriFragment extends Fragment implements View.OnClickListener {
                 imageString = Base64.encodeToString(imageBytes, Base64.DEFAULT);
             }
 
-            String URL = "https://ekolife.vodasoft.com.tr/api/General/InsertFikirSikayet";
+            String URL = "https://ekolife.ekoccs.com/api/General/InsertFikirSikayet";
             JSONObject jsonBody = new JSONObject();
             jsonBody.put("InUserID", userId);
             jsonBody.put("StKonu", editText_oneri_title.getText());

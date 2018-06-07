@@ -147,7 +147,7 @@ public class HaberDetayActivity extends AppCompatActivity implements View.OnClic
 
     private void getRequest(int newsId, final String autoId) {
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://ekolife.vodasoft.com.tr/api/News?id=" + newsId, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://ekolife.ekoccs.com/api/News?id=" + newsId, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.wtf("HaberDetayAct", "Response : " + response);

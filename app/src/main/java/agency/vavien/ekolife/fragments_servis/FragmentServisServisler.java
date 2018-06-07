@@ -85,7 +85,7 @@ public class FragmentServisServisler extends Fragment {
         RequestQueue queue = Volley.newRequestQueue(getContext());
         StringRequest stringRequest = new StringRequest(
                 Request.Method.GET,
-                "https://ekolife.vodasoft.com.tr/api/General/GetServisListesi",
+                "https://ekolife.ekoccs.com/api/General/GetServisListesi",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

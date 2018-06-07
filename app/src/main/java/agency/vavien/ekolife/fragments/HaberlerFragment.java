@@ -104,7 +104,7 @@ public class HaberlerFragment extends Fragment {
 
     private void getRequest(final String autoId) {
         RequestQueue queue = Volley.newRequestQueue(getContext());
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://ekolife.vodasoft.com.tr/api/News/GetNewsTitles", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://ekolife.ekoccs.com/api/News/GetNewsTitles", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.wtf("HaberlerFrag", "Response : " + response);

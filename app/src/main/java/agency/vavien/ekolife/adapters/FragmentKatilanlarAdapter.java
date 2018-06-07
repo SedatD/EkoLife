@@ -23,6 +23,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+import com.onesignal.OneSignal;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -63,7 +67,7 @@ public class FragmentKatilanlarAdapter extends RecyclerView.Adapter<FragmentKati
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         if (Integer.valueOf(preferences.getString("userId", null)) == mDataset.get(position).getId()) {
             holder.button_katilanlar_tebrik.setVisibility(View.GONE);
-            holder.textYourself.setText(123 + " kişi tebrik etti.");
+            holder.textYourself.setText(mDataset.get(position).getLikeAdet() + " kişi tebrik etti.");
             holder.textYourself.setVisibility(View.VISIBLE);
         }
 
@@ -87,21 +91,32 @@ public class FragmentKatilanlarAdapter extends RecyclerView.Adapter<FragmentKati
             public void onClick(View view) {
                 holder.progressBar.setVisibility(View.VISIBLE);
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-                getRequest(preferences.getString("userId", null), mDataset.get(holder.getAdapterPosition()).getId(), preferences.getString("autoId", null), holder.progressBar);
+                getRequest(preferences.getString("userId", null), mDataset.get(holder.getAdapterPosition()).getId(), preferences.getString("autoId", null), holder.progressBar,holder.button_katilanlar_tebrik,mDataset.get(holder.getAdapterPosition()).getOsi());
             }
         });
     }
 
-    private void getRequest(String userId, int id, final String autoId, final ProgressBar progressBar) {
+    private void getRequest(String userId, int id, final String autoId, final ProgressBar progressBar,final Button button_katilanlar_tebrik,final String osi) {
         RequestQueue queue = Volley.newRequestQueue(context);
         StringRequest stringRequest = new StringRequest(
                 Request.Method.GET,
-                "https://ekolife.vodasoft.com.tr/api/General/InsertLike?userId=" + userId + "&likedPersonId=" + id + "&typeId=2",
+                "https://ekolife.ekoccs.com/api/General/InsertLike?userId=" + userId + "&likedPersonId=" + id + "&typeId=2",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        progressBar.setVisibility(View.GONE);
                         Log.wtf("KatilanAdapter", "response : " + response);
+
+                        try {
+                            OneSignal.postNotification(new JSONObject("{'contents': {'en':'Yeni bir teklifin var'}, 'include_player_ids': ['" + osi + "'],'data':{'banaOzel':" + true + "}}"), null);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                        progressBar.setVisibility(View.GONE);
+                        //button_katilanlar_tebrik.setVisibility(View.INVISIBLE);
+                        button_katilanlar_tebrik.setBackgroundColor(R.color.contact_number);
+                        button_katilanlar_tebrik.setText("tebrİk edİldİ");
+                        button_katilanlar_tebrik.setClickable(false);
                         Toast.makeText(context, "Tebrik ettiniz.", Toast.LENGTH_SHORT).show();
                     }
                 },

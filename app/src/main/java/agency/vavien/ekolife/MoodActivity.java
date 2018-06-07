@@ -27,7 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MoodActivity extends AppCompatActivity implements View.OnClickListener {
-    //https://ekolife.vodasoft.com.tr/api/General/GetSystemParameter?value=MOODHELP
+    //https://ekolife.ekoccs.com/api/General/GetSystemParameter?value=MOODHELP
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,7 +107,7 @@ public class MoodActivity extends AppCompatActivity implements View.OnClickListe
 
         JsonObjectRequest stringRequest = new JsonObjectRequest(
                 Request.Method.POST,
-                "https://ekolife.vodasoft.com.tr/api/User/InsertMood",
+                "https://ekolife.ekoccs.com/api/User/InsertMood",
                 jsonBody,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -153,7 +153,7 @@ public class MoodActivity extends AppCompatActivity implements View.OnClickListe
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
         StringRequest stringRequest = new StringRequest(
                 Request.Method.GET,
-                "https://ekolife.vodasoft.com.tr/api/General/GetSystemParameter?value=MOODHELP",
+                "https://ekolife.ekoccs.com/api/General/GetSystemParameter?value=MOODHELP",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

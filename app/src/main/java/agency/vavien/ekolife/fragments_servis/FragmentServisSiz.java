@@ -90,7 +90,7 @@ public class FragmentServisSiz extends Fragment {
         RequestQueue queue = Volley.newRequestQueue(getContext());
         StringRequest stringRequest = new StringRequest(
                 Request.Method.GET,
-                "https://ekolife.vodasoft.com.tr/api/User/GetTransportation?userId=" + userId,
+                "https://ekolife.ekoccs.com/api/User/GetTransportation?userId=" + userId,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

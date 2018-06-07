@@ -167,7 +167,7 @@ public class ProfilFragment extends Fragment implements View.OnClickListener {
 
     private void getRequest(String newsId, final String autoId) {
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://ekolife.vodasoft.com.tr/api/User/GetUserProfile?userId=" + newsId,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://ekolife.ekoccs.com/api/User/GetUserProfile?userId=" + newsId,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -252,7 +252,7 @@ public class ProfilFragment extends Fragment implements View.OnClickListener {
                 imageString = Base64.encodeToString(imageBytes, Base64.DEFAULT);
             }
 
-            String URL = "https://ekolife.vodasoft.com.tr/api/User/UpdateUser";
+            String URL = "https://ekolife.ekoccs.com/api/User/UpdateUser";
             JSONObject jsonBody = new JSONObject();
             jsonBody.put("InUserID", userId);
             jsonBody.put("StFBUserName", editText_profil_facebook.getText());
@@ -338,7 +338,7 @@ public class ProfilFragment extends Fragment implements View.OnClickListener {
         final String finalImageString = imageString;
 
         RequestQueue rQueue = Volley.newRequestQueue(getActivity());
-        StringRequest request = new StringRequest(Request.Method.POST, "https://ekolife.vodasoft.com.tr/api/User/UpdateUser",
+        StringRequest request = new StringRequest(Request.Method.POST, "https://ekolife.ekoccs.com/api/User/UpdateUser",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -406,7 +406,7 @@ public class ProfilFragment extends Fragment implements View.OnClickListener {
         jsonParams.put("StProfileImage", "");
         JsonObjectRequest myRequest = new JsonObjectRequest(
                 Request.Method.POST,
-                "https://ekolife.vodasoft.com.tr/api/User/UpdateUser",
+                "https://ekolife.ekoccs.com/api/User/UpdateUser",
                 new JSONObject(jsonParams),
                 new Response.Listener<JSONObject>() {
                     @Override

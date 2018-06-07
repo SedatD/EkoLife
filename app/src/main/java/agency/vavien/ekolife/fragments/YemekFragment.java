@@ -115,7 +115,7 @@ public class YemekFragment extends Fragment {
 
     private void getRequest(final String autoId) {
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://ekolife.vodasoft.com.tr/api/General/GetMealMenus", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://ekolife.ekoccs.com/api/General/GetMealMenus", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.wtf("YemekFrag", "Response : " + response);

@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void getRequest(final String userId, final String autoId) {
         RequestQueue queue = Volley.newRequestQueue(this);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://ekolife.vodasoft.com.tr/api/General/GetHomePage?userId=" + userId, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://ekolife.ekoccs.com/api/General/GetHomePage?userId=" + userId, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.wtf("MainAct", "Response : " + response);
@@ -150,9 +150,9 @@ public class MainActivity extends AppCompatActivity {
                     editor.putString("jsonObject", jsonObject + "");
                     editor.apply();
 
-                    if (jsonObject.getInt("birthdaylikes") > -1)
+                    if (jsonObject.getBoolean("birthdaylikes"))
                         userFullName.setText("İyi ki doğdun " + userFullName.getText());
-                    if (jsonObject.getInt("joinlikes") > -1)
+                    if (jsonObject.getBoolean("joinlikes"))
                         userFullName.setText("Aramıza hoşgeldin " + userFullName.getText());
 
                     String userImage = jsonObject.getString("userImage");

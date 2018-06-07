@@ -75,7 +75,7 @@ public class EtkinlikFragment extends Fragment {
 
     private void getRequest(final String autoId) {
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://ekolife.vodasoft.com.tr/api/Etkinlik",
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://ekolife.ekoccs.com/api/Etkinlik",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

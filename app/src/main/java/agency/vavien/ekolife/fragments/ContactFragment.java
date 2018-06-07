@@ -59,7 +59,7 @@ import agency.vavien.ekolife.pojo_classes.Contact;
  */
 
 public class ContactFragment extends Fragment implements ContactsAdapter.ContactsAdapterListener, View.OnClickListener {
-    private static final String URL = "https://ekolife.vodasoft.com.tr/api/User";
+    private static final String URL = "https://ekolife.ekoccs.com/api/User";
     Map<String, Integer> mapIndex;
     private RecyclerView recyclerView;
     private List<Contact> contactList;

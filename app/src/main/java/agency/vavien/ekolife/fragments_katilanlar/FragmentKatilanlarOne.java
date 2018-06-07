@@ -83,7 +83,10 @@ public class FragmentKatilanlarOne extends Fragment {
                 String katilanPhoto = jsonObject1.getString("StProfilePhoto");
                 String katilanDep = jsonObject1.getString("StProjectName");
 
-                KatilanlarPojo obj = new KatilanlarPojo(katilanId,katilanPhoto, katilanDep, katilanName, katilanMail);
+                String StOneSignalId = jsonObject1.getString("StOneSignalId");
+                int likeAdet = jsonObject1.getInt("InLikeAdet");
+
+                KatilanlarPojo obj = new KatilanlarPojo(katilanId,katilanPhoto, katilanDep, katilanName, katilanMail,StOneSignalId,likeAdet);
                 results.add(obj);
             }
         } catch (Exception e) {
@@ -111,7 +114,7 @@ public class FragmentKatilanlarOne extends Fragment {
 
     private void getRequest(final String autoId) {
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://ekolife.vodasoft.com.tr/api/General/GetJoins?req=1", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://ekolife.ekoccs.com/api/General/GetJoins?req=1", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.wtf("HttpClient", "success! response 1: " + response);

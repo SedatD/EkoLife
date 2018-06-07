@@ -95,7 +95,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void SifremiUnuttumRequest() {
         RequestQueue queue = Volley.newRequestQueue(this);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://ekolife.vodasoft.com.tr/api/General/GetSystemParameter?value=FORGOTPWD ", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://ekolife.ekoccs.com/api/General/GetSystemParameter?value=FORGOTPWD ", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.wtf("LoginAct", "Response : " + response);
@@ -112,7 +112,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void postRequest(final String name, final String password) {
         RequestQueue queue = Volley.newRequestQueue(this);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://ekolife.vodasoft.com.tr/token", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://ekolife.ekoccs.com/token", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.wtf("LoginAct", "Response : " + response);

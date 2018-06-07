@@ -7,16 +7,18 @@ package agency.vavien.ekolife.pojo_classes;
  */
 
 public class DoganlarPojo {
-    private int id;
-    private String bitmapPhoto, name, horoscope, facebook, instagram;
+    private int id, likeAdet;
+    private String bitmapPhoto, name, horoscope, facebook, instagram, osi;
 
-    public DoganlarPojo(int id, String bitmapPhoto, String name, String horoscope, String facebook, String instagram) {
+    public DoganlarPojo(int id, String bitmapPhoto, String name, String horoscope, String facebook, String instagram,String osi,int likeAdet) {
         this.id = id;
         this.bitmapPhoto = bitmapPhoto;
         this.name = name;
         this.horoscope = horoscope;
         this.facebook = facebook;
         this.instagram = instagram;
+        this.osi = osi;
+        this.likeAdet = likeAdet;
     }
 
     public int getId() {
@@ -43,5 +45,12 @@ public class DoganlarPojo {
         return instagram;
     }
 
+    public int getLikeAdet() {
+        return likeAdet;
+    }
+
+    public String getOsi() {
+        return osi;
+    }
 }
 
