@@ -22,6 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1">
+
             <ImageButton
                 android:id="@+id/imageButton_katilanlar"
                 android:layout_width="match_parent"
@@ -36,33 +37,19 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
+                android:layout_margin="5dp"
                 android:background="@drawable/circle"
                 android:gravity="center"
                 android:text="5"
-                android:layout_margin="5dp"
                 android:textColor="#FFF"
                 android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textView_dash"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginEnd="126dp"
-                android:layout_marginRight="126dp"
-                android:text="Mevcut bir haber yok"
-                android:textAlignment="center"
-                android:textColor="@color/colorMainPurple"
-                android:textSize="23sp"
-                android:visibility="gone" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1">
+
             <ImageButton
                 android:id="@+id/imageButton_doganlar"
                 android:layout_width="match_parent"
@@ -77,10 +64,10 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
+                android:layout_margin="5dp"
                 android:background="@drawable/circle"
                 android:gravity="center"
                 android:text="5"
-                android:layout_margin="5dp"
                 android:textColor="#FFF"
                 android:textStyle="bold" />
         </RelativeLayout>
@@ -158,6 +145,18 @@
         </RelativeLayout>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView_dash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mevcut bir haber yok"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        android:textAlignment="center"
+        android:textColor="@color/colorMainPurple"
+        android:textSize="23sp" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView_dash"

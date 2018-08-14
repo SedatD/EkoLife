@@ -83,9 +83,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.button_login:
                 progress = ProgressDialog.show(this, "Giriş Yapılıyor", "Lütfen Bekleyiniz", true);
-                if (editText_name.getText().toString().equals("") && editText_password.getText().toString().equals(""))
+                /*if (editText_name.getText().toString().equals("") && editText_password.getText().toString().equals(""))
                     postRequest("okoc", "Ok124578!");
-                else
+                else*/
                     postRequest(editText_name.getText().toString(), editText_password.getText().toString());
                 break;
             default:

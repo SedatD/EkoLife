@@ -113,7 +113,7 @@ public class FragmentKatilanlarThree extends Fragment {
                 Log.wtf("HttpClient", "success! response 3: " + response);
                 try {
                     jsonArray = new JSONArray(response);
-                    if (jsonArray.length() != 0)
+                    if (jsonArray.length() != 0 && isAdded())
                         recycInit();
                     else
                         textView_nope.setVisibility(View.VISIBLE);

@@ -60,7 +60,7 @@ public class FragmentServisServisler extends Fragment {
         expandableListView_servis_servisler.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                String child_name = (String) ExpAdapter.getChild(groupPosition, childPosition);
+                //String child_name = (String) ExpAdapter.getChild(groupPosition, childPosition);
                 //Toast.makeText(getActivity(), child_name, Toast.LENGTH_SHORT).show();
                 return false;
             }
