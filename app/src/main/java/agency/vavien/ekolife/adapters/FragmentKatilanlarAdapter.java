@@ -64,10 +64,17 @@ public class FragmentKatilanlarAdapter extends RecyclerView.Adapter<FragmentKati
 
     @Override
     public void onBindViewHolder(final DataObjectHolder holder, int position) {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        if (Integer.valueOf(preferences.getString("userId", null)) == mDataset.get(position).getId()) {
+
+        if (mDataset.get(position).isBoIsLiked()) {
             holder.button_katilanlar_tebrik.setVisibility(View.GONE);
-            holder.textYourself.setText(mDataset.get(position).getLikeAdet() + " kişi tebrik etti.");
+            holder.textYourself.setText("Bu kişiyi zaten tebrik ettiniz");
+            holder.textYourself.setVisibility(View.VISIBLE);
+        }
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        if (Integer.valueOf(preferences.getString("userId", null)) == mDataset.get(position).getInPersonelID()) {
+            holder.button_katilanlar_tebrik.setVisibility(View.GONE);
+            holder.textYourself.setText(mDataset.get(position).getInLikeAdet() + " kişi tebrik etti.");
             holder.textYourself.setVisibility(View.VISIBLE);
         }
 
@@ -78,25 +85,25 @@ public class FragmentKatilanlarAdapter extends RecyclerView.Adapter<FragmentKati
 
         //Picasso.with(context).load(mDataset.get(position).getBitmapPhoto()).resize(160, 80).into(holder.imageView_katilanlar_foto);
         Glide.with(context)
-                .load(mDataset.get(position).getBitmapPhoto())
+                .load(mDataset.get(position).getStProfilePhoto())
                 //.fitCenter()
                 //.centerCrop()
                 .into(holder.imageView_katilanlar_foto);
-        holder.textView_katilanlar_departman.setText(mDataset.get(position).getDepartman());
-        holder.textView_katilanlar_isim.setText(mDataset.get(position).getName());
-        holder.textView_katilanlar_mail.setText(mDataset.get(position).getMail());
+        holder.textView_katilanlar_departman.setText(mDataset.get(position).getStProjectName());
+        holder.textView_katilanlar_isim.setText(mDataset.get(position).getStFullName());
+        holder.textView_katilanlar_mail.setText(mDataset.get(position).getStFrmeMail());
 
         holder.button_katilanlar_tebrik.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 holder.progressBar.setVisibility(View.VISIBLE);
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-                getRequest(preferences.getString("userId", null), mDataset.get(holder.getAdapterPosition()).getId(), preferences.getString("autoId", null), holder.progressBar,holder.button_katilanlar_tebrik,mDataset.get(holder.getAdapterPosition()).getOsi());
+                getRequest(preferences.getString("userId", null), mDataset.get(holder.getAdapterPosition()).getInPersonelID(), preferences.getString("autoId", null), holder.progressBar, holder.button_katilanlar_tebrik, mDataset.get(holder.getAdapterPosition()).getStOneSignalId());
             }
         });
     }
 
-    private void getRequest(String userId, int id, final String autoId, final ProgressBar progressBar,final Button button_katilanlar_tebrik,final String osi) {
+    private void getRequest(String userId, int id, final String autoId, final ProgressBar progressBar, final Button button_katilanlar_tebrik, final String osi) {
         RequestQueue queue = Volley.newRequestQueue(context);
         StringRequest stringRequest = new StringRequest(
                 Request.Method.GET,

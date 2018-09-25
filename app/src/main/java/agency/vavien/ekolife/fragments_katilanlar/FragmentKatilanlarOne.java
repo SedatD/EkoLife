@@ -75,18 +75,7 @@ public class FragmentKatilanlarOne extends Fragment {
         try {
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject1 = (JSONObject) jsonArray.get(i);
-
-                int katilanId = jsonObject1.getInt("InPersonelID");
-                String katilanName = jsonObject1.getString("StFullName");
-                String katilanMail = jsonObject1.getString("stFrmeMail");
-                String katilanTel = jsonObject1.getString("StPhoneMobile");
-                String katilanPhoto = jsonObject1.getString("StProfilePhoto");
-                String katilanDep = jsonObject1.getString("StProjectName");
-
-                String StOneSignalId = jsonObject1.getString("StOneSignalId");
-                int likeAdet = jsonObject1.getInt("InLikeAdet");
-
-                KatilanlarPojo obj = new KatilanlarPojo(katilanId,katilanPhoto, katilanDep, katilanName, katilanMail,StOneSignalId,likeAdet);
+                KatilanlarPojo obj = new KatilanlarPojo(jsonObject1);
                 results.add(obj);
             }
         } catch (Exception e) {

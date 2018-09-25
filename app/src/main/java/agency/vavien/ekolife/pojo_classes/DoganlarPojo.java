@@ -1,5 +1,8 @@
 package agency.vavien.ekolife.pojo_classes;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * Created by SD on 18.12.2017.
  * dilmacsedat@gmail.com
@@ -7,50 +10,67 @@ package agency.vavien.ekolife.pojo_classes;
  */
 
 public class DoganlarPojo {
-    private int id, likeAdet;
-    private String bitmapPhoto, name, horoscope, facebook, instagram, osi;
 
-    public DoganlarPojo(int id, String bitmapPhoto, String name, String horoscope, String facebook, String instagram,String osi,int likeAdet) {
-        this.id = id;
-        this.bitmapPhoto = bitmapPhoto;
-        this.name = name;
-        this.horoscope = horoscope;
-        this.facebook = facebook;
-        this.instagram = instagram;
-        this.osi = osi;
-        this.likeAdet = likeAdet;
+    private int InPersonelID, InLikeAdet;
+    private String StFullName, StProfilePhoto, StOneSignalId, Horoscope, StFacebook, StInstagram, StLinkedin;
+    private boolean BoIsLiked;
+
+    public DoganlarPojo(JSONObject jsonObject) {
+        try {
+            InPersonelID = jsonObject.getInt("InPersonelID");
+            StFullName = "Nice Yıllara " + jsonObject.getString("StFullName");
+            StProfilePhoto = jsonObject.getString("StProfilePhoto");
+            InLikeAdet = jsonObject.getInt("InLikeAdet");
+            StOneSignalId = jsonObject.getString("StOneSignalId");
+            BoIsLiked = jsonObject.getBoolean("BoIsLiked");
+            Horoscope = jsonObject.getString("Horoscope");
+            StFacebook = jsonObject.getString("StFacebook");
+            StInstagram = jsonObject.getString("StInstagram");
+            StLinkedin = jsonObject.getString("StLinkedin");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
-    public int getId() {
-        return id;
+    public int getInPersonelID() {
+        return InPersonelID;
     }
 
-    public String getBitmapPhoto() {
-        return bitmapPhoto;
+    public int getInLikeAdet() {
+        return InLikeAdet;
     }
 
-    public String getName() {
-        return name;
+    public String getStFullName() {
+        return StFullName;
+    }
+
+    public String getStProfilePhoto() {
+        return StProfilePhoto;
+    }
+
+    public String getStOneSignalId() {
+        return StOneSignalId;
     }
 
     public String getHoroscope() {
-        return horoscope;
+        return Horoscope;
     }
 
-    public String getFacebook() {
-        return facebook;
+    public String getStFacebook() {
+        return StFacebook;
     }
 
-    public String getInstagram() {
-        return instagram;
+    public String getStInstagram() {
+        return StInstagram;
     }
 
-    public int getLikeAdet() {
-        return likeAdet;
+    public String getStLinkedin() {
+        return StLinkedin;
     }
 
-    public String getOsi() {
-        return osi;
+    public boolean isBoIsLiked() {
+        return BoIsLiked;
     }
+
 }
 

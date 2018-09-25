@@ -1,49 +1,74 @@
 package agency.vavien.ekolife.pojo_classes;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * Created by SD on 18.12.2017.
  * dilmacsedat@gmail.com
  * :)
  */
 public class KatilanlarPojo {
-    private int id,likeAdet;
-    private String departman, name, mail, bitmapPhoto,osi;
 
-    public KatilanlarPojo(int id, String bitmapPhoto, String departman, String name, String mail,String osi,int likeAdet) {
-        this.id = id;
-        this.bitmapPhoto = bitmapPhoto;
-        this.departman = departman;
-        this.name = name;
-        this.mail = mail;
-        this.osi = osi;
-        this.likeAdet = likeAdet;
+    private int InPersonelID, InLikeAdet;
+    private String StFullName, stFrmeMail, StPhoneMobile, StProfilePhoto, StProjectName, DtWorkStart, StOneSignalId;
+    private boolean BoIsLiked;
+
+    public KatilanlarPojo(JSONObject jsonObject) {
+        try {
+            InPersonelID = jsonObject.getInt("InPersonelID");
+            StFullName = jsonObject.getString("StFullName");
+            stFrmeMail = jsonObject.getString("stFrmeMail");
+            StPhoneMobile = jsonObject.getString("StPhoneMobile");
+            StProfilePhoto = jsonObject.getString("StProfilePhoto");
+            StProjectName = jsonObject.getString("StProjectName");
+            DtWorkStart = jsonObject.getString("DtWorkStart");
+            InLikeAdet = jsonObject.getInt("InLikeAdet");
+            StOneSignalId = jsonObject.getString("StOneSignalId");
+            BoIsLiked = jsonObject.getBoolean("BoIsLiked");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
-    public String getBitmapPhoto() {
-        return bitmapPhoto;
+    public int getInPersonelID() {
+        return InPersonelID;
     }
 
-    public String getDepartman() {
-        return departman;
+    public int getInLikeAdet() {
+        return InLikeAdet;
     }
 
-    public String getName() {
-        return name;
+    public String getStFullName() {
+        return StFullName;
     }
 
-    public String getMail() {
-        return mail;
+    public String getStFrmeMail() {
+        return stFrmeMail;
     }
 
-    public int getId() {
-        return id;
+    public String getStPhoneMobile() {
+        return StPhoneMobile;
     }
 
-    public int getLikeAdet() {
-        return likeAdet;
+    public String getStProfilePhoto() {
+        return StProfilePhoto;
     }
 
-    public String getOsi() {
-        return osi;
+    public String getStProjectName() {
+        return StProjectName;
     }
+
+    public String getDtWorkStart() {
+        return DtWorkStart;
+    }
+
+    public String getStOneSignalId() {
+        return StOneSignalId;
+    }
+
+    public boolean isBoIsLiked() {
+        return BoIsLiked;
+    }
+
 }

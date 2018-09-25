@@ -74,19 +74,7 @@ public class FragmentDoganlarTwo extends Fragment {
         try {
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject1 = (JSONObject) jsonArray.get(i);
-
-                int katilanId = jsonObject1.getInt("InPersonelID");
-                String doganlarName = jsonObject1.getString("StFullName");
-                String doganlarPhoto = jsonObject1.getString("StProfilePhoto");
-                String Horoscope = jsonObject1.getString("Horoscope");
-                String StFacebook = jsonObject1.getString("StFacebook");
-                String StInstagram = jsonObject1.getString("StInstagram");
-                String StLinkedin = jsonObject1.getString("StLinkedin");
-
-                String StOneSignalId = jsonObject1.getString("StOneSignalId");
-                int likeAdet = jsonObject1.getInt("InLikeAdet");
-
-                DoganlarPojo obj = new DoganlarPojo(katilanId, doganlarPhoto, "Nice Yıllara " + doganlarName, Horoscope, StFacebook, StInstagram, StOneSignalId, likeAdet);
+                DoganlarPojo obj = new DoganlarPojo(jsonObject1);
                 results.add(obj);
             }
         } catch (Exception e) {

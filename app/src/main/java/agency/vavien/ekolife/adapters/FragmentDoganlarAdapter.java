@@ -67,10 +67,17 @@ public class FragmentDoganlarAdapter extends RecyclerView.Adapter<FragmentDoganl
 
     @Override
     public void onBindViewHolder(final DataObjectHolder holder, int position) {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        if (Integer.valueOf(preferences.getString("userId", null)) == mDataset.get(position).getId()) {
+
+        if (mDataset.get(position).isBoIsLiked()) {
             holder.button_doganlar_tebrik.setVisibility(View.GONE);
-            holder.textYourself.setText(mDataset.get(position).getLikeAdet() + " kişi tebrik etti.");
+            holder.textYourself.setText("Bu kişiyi zaten tebrik ettiniz");
+            holder.textYourself.setVisibility(View.VISIBLE);
+        }
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        if (Integer.valueOf(preferences.getString("userId", null)) == mDataset.get(position).getInPersonelID()) {
+            holder.button_doganlar_tebrik.setVisibility(View.GONE);
+            holder.textYourself.setText(mDataset.get(position).getInLikeAdet() + " kişi tebrik etti.");
             holder.textYourself.setVisibility(View.VISIBLE);
         }
 
@@ -81,18 +88,18 @@ public class FragmentDoganlarAdapter extends RecyclerView.Adapter<FragmentDoganl
 
         //Picasso.with(context).load(mDataset.get(position).getBitmapPhoto()).resize(160, 80).into(holder.imageView_doganlar_foto);
         Glide.with(context)
-                .load(mDataset.get(position).getBitmapPhoto())
+                .load(mDataset.get(position).getStProfilePhoto())
                 //.fitCenter()
                 //.centerCrop()
                 .into(holder.imageView_doganlar_foto);
-        holder.textView_doganlar_text.setText(mDataset.get(position).getName());
+        holder.textView_doganlar_text.setText(mDataset.get(position).getStFullName());
 
-        holder.imageButton_doganlar_instagram.setTag(mDataset.get(position).getInstagram());
-        holder.imageButton_doganlar_facebook.setTag(mDataset.get(position).getFacebook());
+        holder.imageButton_doganlar_instagram.setTag(mDataset.get(position).getStInstagram());
+        holder.imageButton_doganlar_facebook.setTag(mDataset.get(position).getStFacebook());
 
-        if (mDataset.get(position).getInstagram().equals("null"))
+        if (mDataset.get(position).getStInstagram().equals("null"))
             holder.imageButton_doganlar_instagram.setVisibility(View.INVISIBLE);
-        if (mDataset.get(position).getFacebook().equals("null"))
+        if (mDataset.get(position).getStFacebook().equals("null"))
             holder.imageButton_doganlar_facebook.setVisibility(View.INVISIBLE);
 
         holder.button_doganlar_tebrik.setOnClickListener(new View.OnClickListener() {
@@ -100,7 +107,7 @@ public class FragmentDoganlarAdapter extends RecyclerView.Adapter<FragmentDoganl
             public void onClick(View view) {
                 holder.progressBar.setVisibility(View.VISIBLE);
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-                getRequest(preferences.getString("userId", null), mDataset.get(holder.getAdapterPosition()).getId(), preferences.getString("autoId", null), holder.progressBar, holder.button_doganlar_tebrik, mDataset.get(holder.getAdapterPosition()).getOsi());
+                getRequest(preferences.getString("userId", null), mDataset.get(holder.getAdapterPosition()).getInPersonelID(), preferences.getString("autoId", null), holder.progressBar, holder.button_doganlar_tebrik, mDataset.get(holder.getAdapterPosition()).getStOneSignalId());
             }
         });
     }
