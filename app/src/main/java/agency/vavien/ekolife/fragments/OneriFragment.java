@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -221,6 +222,10 @@ public class OneriFragment extends Fragment implements View.OnClickListener {
                 }
             };
             RequestQueue rQueue = Volley.newRequestQueue(getActivity());
+            jsonOblect.setRetryPolicy(new DefaultRetryPolicy(
+                    4700,
+                    DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                    DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
             rQueue.add(jsonOblect);
         } catch (JSONException e) {
             e.printStackTrace();

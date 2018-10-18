@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -321,6 +322,10 @@ public class ProfilFragment extends Fragment implements View.OnClickListener {
                 }
             };
             RequestQueue rQueue = Volley.newRequestQueue(getActivity());
+            jsonOblect.setRetryPolicy(new DefaultRetryPolicy(
+                    4700,
+                    DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                    DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
             rQueue.add(jsonOblect);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -394,6 +399,10 @@ public class ProfilFragment extends Fragment implements View.OnClickListener {
                 return headers;
             }
         };
+        request.setRetryPolicy(new DefaultRetryPolicy(
+                4700,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         rQueue.add(request);
     }
 
@@ -437,6 +446,10 @@ public class ProfilFragment extends Fragment implements View.OnClickListener {
             }
         };
         RequestQueue rQueue = Volley.newRequestQueue(getActivity());
+        myRequest.setRetryPolicy(new DefaultRetryPolicy(
+                4700,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         rQueue.add(myRequest);
     }
 }

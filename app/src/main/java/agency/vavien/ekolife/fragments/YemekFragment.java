@@ -14,6 +14,7 @@ import android.widget.CalendarView;
 import android.widget.ListView;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -128,8 +129,10 @@ public class YemekFragment extends Fragment {
                     for (int i = 0; i < jsonArray.length(); i++) {
                         list.add(String.valueOf(jsonArray.get(i)));
                     }
-                    final StableArrayAdapter adapter = new StableArrayAdapter(getActivity().getApplicationContext(), R.layout.custom_list_item, list);
-                    listView_yemek.setAdapter(adapter);
+                    if(getActivity().getApplicationContext() != null){
+                        final StableArrayAdapter adapter = new StableArrayAdapter(getActivity().getApplicationContext(), R.layout.custom_list_item, list);
+                        listView_yemek.setAdapter(adapter);
+                    }
                 } catch (JSONException e) {
                     final ArrayList<String> list = new ArrayList<String>();
                     list.add("Yemek listesi kaydı bulunmamaktadır");
@@ -151,6 +154,10 @@ public class YemekFragment extends Fragment {
                 return params;
             }
         };
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                4700,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         queue.add(stringRequest);
     }
 
