@@ -5,10 +5,12 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.util.Log;
 
+import com.crashlytics.android.Crashlytics;
 import com.onesignal.OSNotificationAction;
 import com.onesignal.OSNotificationOpenResult;
 import com.onesignal.OneSignal;
 
+import io.fabric.sdk.android.Fabric;
 import org.json.JSONObject;
 
 /**
@@ -32,6 +34,7 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Fabric.with(this, new Crashlytics());
 
         singleton = this;
 

@@ -45,6 +45,9 @@
         <activity
             android:name=".MoodActivity"
             android:screenOrientation="portrait" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="43986970e5ca6892a5db016e2d5a5ac2d72ea055" />
     </application>
 
 </manifest>
