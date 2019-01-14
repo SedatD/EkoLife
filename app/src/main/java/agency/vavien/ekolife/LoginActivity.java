@@ -22,6 +22,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.crashlytics.android.Crashlytics;
 import com.onesignal.OneSignal;
 
 import org.json.JSONException;
@@ -133,6 +134,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     editor.putString("autoId", jsonObject.getString("token_type") + " " + jsonObject.getString("access_token"));
                     editor.apply();
 
+                    logUser(jsonObject.getString("userid"),jsonObject.getString("userFullName"));
+
                     if (myBool)
                         startActivity(new Intent(LoginActivity.this, MoodActivity.class));
                     else
@@ -176,5 +179,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         queue.add(stringRequest);
     }
+
+    private void logUser(String userid, String userFullName) {
+        Crashlytics.setUserIdentifier(userid);
+        Crashlytics.setUserName(userFullName);
+    }
+
 
 }
