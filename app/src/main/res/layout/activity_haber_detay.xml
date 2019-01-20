@@ -19,8 +19,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignEnd="@+id/imageView_haber_detay_gorsel"
-                android:layout_alignParentTop="true"
                 android:layout_alignRight="@+id/imageView_haber_detay_gorsel"
+                android:layout_alignParentTop="true"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/ic_menu_share" />
 
@@ -36,28 +36,40 @@
                 android:id="@+id/textView_haber_detay_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignEnd="@+id/imageView_haber_detay_gorsel"
-                android:layout_alignLeft="@+id/imageView_haber_detay_gorsel"
-                android:layout_alignRight="@+id/imageView_haber_detay_gorsel"
-                android:layout_alignStart="@+id/imageView_haber_detay_gorsel"
                 android:layout_below="@+id/imageView_haber_detay_gorsel"
+                android:layout_alignStart="@+id/imageView_haber_detay_gorsel"
+                android:layout_alignLeft="@+id/imageView_haber_detay_gorsel"
+                android:layout_alignEnd="@+id/imageView_haber_detay_gorsel"
+                android:layout_alignRight="@+id/imageView_haber_detay_gorsel"
                 android:layout_marginTop="20dp"
                 android:textColor="@color/colorMainPurple"
                 android:textSize="21sp"
                 android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/textView_haber_detay_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView_haber_detay_title"
+                android:layout_alignStart="@+id/textView_haber_detay_title"
+                android:layout_alignLeft="@+id/textView_haber_detay_title"
+                android:layout_alignEnd="@+id/textView_haber_detay_title"
+                android:layout_alignRight="@+id/textView_haber_detay_title"
+                android:layout_marginTop="10dp"
+                android:gravity="end" />
 
             <TextView
                 android:id="@+id/textView_haber_detay_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignEnd="@+id/textView_haber_detay_title"
-                android:layout_alignLeft="@+id/textView_haber_detay_title"
-                android:layout_alignRight="@+id/textView_haber_detay_title"
-                android:layout_alignStart="@+id/textView_haber_detay_title"
-                android:layout_below="@+id/textView_haber_detay_title"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="10dp" />
+                android:layout_below="@+id/textView_haber_detay_date"
+                android:layout_alignStart="@+id/textView_haber_detay_date"
+                android:layout_alignLeft="@+id/textView_haber_detay_date"
+                android:layout_alignEnd="@+id/textView_haber_detay_date"
+                android:layout_alignRight="@+id/textView_haber_detay_date"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp" />
+
         </RelativeLayout>
 
     </ScrollView>

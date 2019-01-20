@@ -21,7 +21,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -34,8 +33,6 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.xml.sax.InputSource;
-import org.xml.sax.XMLReader;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -45,12 +42,9 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-
 public class HaberDetayActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageView imageView_haber_detay_gorsel, imageButton_share;
-    private TextView textView_haber_detay_title, textView_haber_detay_content;
+    private TextView textView_haber_detay_title, textView_haber_detay_content, textView_haber_detay_date;
     private Uri imguri;
     private String haberResimUrlString = "";
     private String subject, text;
@@ -135,6 +129,7 @@ public class HaberDetayActivity extends AppCompatActivity implements View.OnClic
         imageView_haber_detay_gorsel = findViewById(R.id.imageView_haber_detay_gorsel);
         textView_haber_detay_title = findViewById(R.id.textView_haber_detay_title);
         textView_haber_detay_content = findViewById(R.id.textView_haber_detay_content);
+        textView_haber_detay_date = findViewById(R.id.textView_haber_detay_date);
         imageButton_share = findViewById(R.id.imageButton_share);
 
         imageButton_share.setOnClickListener(this);
@@ -162,6 +157,7 @@ public class HaberDetayActivity extends AppCompatActivity implements View.OnClic
 
                     textView_haber_detay_title.setText(jsonObject.getString("StHaberBasligi"));
                     textView_haber_detay_content.setText(jsonObject.getString("StHaber"));
+                    textView_haber_detay_date.setText(jsonObject.getString("DtInsertedDate"));
 
                     haberResimUrlString = jsonObject.getString("StResimUrl");
 
@@ -206,7 +202,7 @@ public class HaberDetayActivity extends AppCompatActivity implements View.OnClic
             }
         }) {
             @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
+            public Map<String, String> getHeaders() {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("Authorization", autoId);
                 return params;

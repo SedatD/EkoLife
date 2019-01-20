@@ -29,7 +29,7 @@ public class DashHaberAdapter extends RecyclerView.Adapter<DashHaberAdapter.Data
     }
 
     public void setOnItemClickListener(MyClickListener myClickListener) {
-        this.myClickListener = myClickListener;
+        DashHaberAdapter.myClickListener = myClickListener;
     }
 
     @Override
@@ -40,7 +40,7 @@ public class DashHaberAdapter extends RecyclerView.Adapter<DashHaberAdapter.Data
         int width = parent.getMeasuredWidth();
 
         view.setLayoutParams(new RecyclerView.LayoutParams(width, height));
-        back= ContextCompat.getColor(parent.getContext(),R.color.haberGrisi);
+        back = ContextCompat.getColor(parent.getContext(), R.color.haberGrisi);
         DataObjectHolder dataObjectHolder = new DataObjectHolder(view);
         return dataObjectHolder;
     }
@@ -52,6 +52,7 @@ public class DashHaberAdapter extends RecyclerView.Adapter<DashHaberAdapter.Data
 
         holder.textView_dash_haber_title.setText(mDataset.get(position).getTitle());
         holder.textView_dash_haber_summary.setText(mDataset.get(position).getSummary());
+        holder.textView_dash_haber_date.setText(mDataset.get(position).getNewsDate());
     }
 
     public void addItem(DashHaberPojo dataObj, int index) {
@@ -70,18 +71,19 @@ public class DashHaberAdapter extends RecyclerView.Adapter<DashHaberAdapter.Data
     }
 
     public interface MyClickListener {
-        public void onItemClick(int position, View v);
+        void onItemClick(int position, View v);
     }
 
     public static class DataObjectHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         LinearLayout linearLayout_recylerView_dash_haber;
-        TextView textView_dash_haber_title, textView_dash_haber_summary;
+        TextView textView_dash_haber_title, textView_dash_haber_summary, textView_dash_haber_date;
 
         private DataObjectHolder(View itemView) {
             super(itemView);
-            linearLayout_recylerView_dash_haber = (LinearLayout) itemView.findViewById(R.id.linearLayout_recylerView_dash_haber);
-            textView_dash_haber_title = (TextView) itemView.findViewById(R.id.textView_dash_haber_title);
-            textView_dash_haber_summary = (TextView) itemView.findViewById(R.id.textView_dash_haber_summary);
+            linearLayout_recylerView_dash_haber = itemView.findViewById(R.id.linearLayout_recylerView_dash_haber);
+            textView_dash_haber_title = itemView.findViewById(R.id.textView_dash_haber_title);
+            textView_dash_haber_summary = itemView.findViewById(R.id.textView_dash_haber_summary);
+            textView_dash_haber_date = itemView.findViewById(R.id.textView_dash_haber_date);
             itemView.setOnClickListener(this);
         }
 

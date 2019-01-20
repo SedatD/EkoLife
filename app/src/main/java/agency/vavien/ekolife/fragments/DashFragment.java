@@ -148,7 +148,7 @@ public class DashFragment extends Fragment implements View.OnClickListener {
                 String newsSummary = jsonObject1.getString("StHaberSumm");
                 String newsDate = jsonObject1.getString("DtInsertedDate");
 
-                DashHaberPojo obj = new DashHaberPojo(newsTitle, newsSummary, newsId);
+                DashHaberPojo obj = new DashHaberPojo(newsTitle, newsSummary, newsId, newsDate);
                 results.add(obj);
             }
         } catch (Exception e) {

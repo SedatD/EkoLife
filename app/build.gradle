@@ -24,8 +24,8 @@ android {
         applicationId "agency.vavien.ekolife"
         minSdkVersion 15
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "2.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         manifestPlaceholders = [onesignal_app_id               : "63604bb5-5073-434b-b227-c5a4153d8ad9",
                                 // Project number pulled from dashboard, local value is ignored.

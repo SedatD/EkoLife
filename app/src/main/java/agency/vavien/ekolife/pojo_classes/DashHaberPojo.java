@@ -7,13 +7,14 @@ package agency.vavien.ekolife.pojo_classes;
  */
 
 public class DashHaberPojo {
-    private String title, summary;
+    private String title, summary, newsDate;
     private int newsId;
 
-    public DashHaberPojo(String title, String summary, int newsId) {
+    public DashHaberPojo(String title, String summary, int newsId, String newsDate) {
         this.title = title;
         this.summary = summary;
         this.newsId = newsId;
+        this.newsDate = newsDate;
     }
 
     public String getTitle() {
@@ -27,4 +28,9 @@ public class DashHaberPojo {
     public int getNewsId() {
         return newsId;
     }
+
+    public String getNewsDate() {
+        return newsDate;
+    }
+
 }
